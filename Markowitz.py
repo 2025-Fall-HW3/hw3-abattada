@@ -62,7 +62,12 @@ class EqualWeightPortfolio:
         """
         TODO: Complete Task 1 Below
         """
+	n_assets = len(assets)
+        equal_weight = 1.0 / n_assets
 
+        for date in self.portfolio_weights.index:
+            self.portfolio_weights.loc[date, assets] = equal_weight
+            self.portfolio_weights.loc[date, self.exclude] = 0.0
         """
         TODO: Complete Task 1 Above
         """
